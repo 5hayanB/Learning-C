@@ -2,25 +2,50 @@
 
 int main(void)
 {
-    int max, min, num1, num2, num3, num4;
+    int num1, num2, num3, num4,
+        min1, min2, max1, max2,
+        min,  max;
 
     printf("Enter four integers: ");
     scanf("%d %d %d %d", &num1, &num2, &num3, &num4);
 
-    max = min = num1;
+    if (num1 >= num2)
+    {
+        max1 = num1;
+        min1 = num2;
+    }
+    else
+    {
+        max1 = num2;
+        min1 = num1;
+    }
+    if (num3 >= num4)
+    {
+        max2 = num3;
+        min2 = num4;
+    }
+    else
+    {
+        max2 = num4;
+        min2 = num3;
+    }
+    if (max2 > max1)
+    {
+        max = max2;
+    }
+    else
+    {
+        max = max1;
+    }
+    if (min2 < min1)
+    {
+        min = min2;
+    }
+    else
+    {
+        min = min1;
+    }
+    printf("Largest: %d\nSmallest: %d\n", max, min);
 
-    if (num2 > max)
-    {
-        max = num2;
-        min = min > num2 ? num2:;
-    }
-    else if (num3 > max)
-    {
-        max = num3;
-        min = min > num3 ? num3:;
-    }
-    else if (num4 > max)
-    {
-        max = num4;
-    }
+    return 0;
 }
